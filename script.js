@@ -1,42 +1,40 @@
-const timerDisplay = document.getElementById("timer");
-const startBtn = document.getElementById("startBtn");
+const timer = document.getElementById("timer");
 
 const startSound = new Audio("start.mp3");
 const warningSound = new Audio("warning.mp3");
 const endSound = new Audio("end.mp3");
 
-let totalSeconds = 150; // 2:30
-let timerRunning = false;
+let totalSeconds = 150;
+let running = false;
 let interval;
 
-function updateDisplay() {
+function updateTimer() {
 
     let minutes = Math.floor(totalSeconds / 60);
     let seconds = totalSeconds % 60;
 
-    minutes = String(minutes).padStart(2, "0");
-    seconds = String(seconds).padStart(2, "0");
+    seconds = seconds.toString().padStart(2, "0");
 
-    timerDisplay.textContent = `${minutes}:${seconds}`;
+    timer.textContent = `${minutes}:${seconds}`;
 }
 
 function startTimer() {
 
-    if (timerRunning) return;
+    if (running) return;
 
-    timerRunning = true;
+    running = true;
 
     startSound.play();
 
-    startBtn.style.display = "none";
+    document.documentElement.requestFullscreen();
 
     interval = setInterval(() => {
 
         totalSeconds--;
 
-        updateDisplay();
+        updateTimer();
 
-        // Play warning sound at 0:30
+        // Warning sound at 0:30
         if (totalSeconds === 30) {
             warningSound.play();
         }
@@ -48,21 +46,18 @@ function startTimer() {
 
             endSound.play();
 
-            // Flash red
-            document.body.classList.add("redFlash");
+            // Red flash
+            document.body.style.backgroundColor = "red";
 
             setTimeout(() => {
-
-                document.body.classList.remove("redFlash");
-
-                document.body.classList.add("yellowEnd");
-
+                document.body.style.backgroundColor = "yellow";
             }, 1000);
         }
 
     }, 1000);
 }
 
-startBtn.addEventListener("click", startTimer);
+// Start when clicking the timer
+timer.addEventListener("click", startTimer);
 
-updateDisplay();
+updateTimer();
