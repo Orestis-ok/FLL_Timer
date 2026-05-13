@@ -1,8 +1,8 @@
 const timer = document.getElementById("timer");
 
-const startSound = new Audio("start.mp3");
-const warningSound = new Audio("warning.mp3");
-const endSound = new Audio("end.mp3");
+const startSound = new Audio("start.mp4");
+const warningSound = new Audio("warning.mp4");
+const endSound = new Audio("end.mp4");
 
 let totalSeconds = 150;
 let running = false;
