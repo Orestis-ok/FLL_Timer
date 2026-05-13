@@ -51,7 +51,7 @@ function startTimer() {
 
             setTimeout(() => {
                 document.body.style.backgroundColor = "yellow";
-            }, 1000);
+            }, 500);
         }
 
     }, 1000);
