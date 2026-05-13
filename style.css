@@ -1,42 +1,28 @@
 body {
     margin: 0;
+
+    width: 100vw;
     height: 100vh;
 
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    background-color: green;
+    background-color: #57ff00;
 
-    font-family: Arial, sans-serif;
+    overflow: hidden;
 
-    transition: background-color 0.3s;
+    transition: background-color 0.2s;
 }
 
 #timer {
-    font-size: 10rem;
-    color: white;
-    font-weight: bold;
-}
+    font-size: 24vw;
 
-#startBtn {
-    margin-top: 30px;
+    color: black;
 
-    padding: 20px 50px;
+    font-family: "Times New Roman", serif;
 
-    font-size: 2rem;
-
-    border: none;
-    border-radius: 15px;
+    user-select: none;
 
     cursor: pointer;
-}
-
-.redFlash {
-    background-color: red !important;
-}
-
-.yellowEnd {
-    background-color: yellow !important;
 }
