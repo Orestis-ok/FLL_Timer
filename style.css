@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: green;
+
+    font-family: Arial, sans-serif;
+
+    transition: background-color 0.3s;
+}
+
+#timer {
+    font-size: 10rem;
+    color: white;
+    font-weight: bold;
+}
+
+#startBtn {
+    margin-top: 30px;
+
+    padding: 20px 50px;
+
+    font-size: 2rem;
+
+    border: none;
+    border-radius: 15px;
+
+    cursor: pointer;
+}
+
+.redFlash {
+    background-color: red !important;
+}
+
+.yellowEnd {
+    background-color: yellow !important;
+}
